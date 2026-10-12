@@ -1,0 +1,138 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP
+* <Natural Source Header
+* MAP2: PROTOTYPE VERSION 820 --- CREATED BY ONE 9.3.1 ---
+* INPUT USING MAP 'XXXXXXXX'
+*     #ALTENATIVE-NAME #DAM-ID1 #DAM-NAME #G-MASSAGE #IMPOUNDS #NEAREST-LOCAL
+*     #PROGRAM #PROVINCE #RESERVOUR-VOLUME #SURFACE-AREA #WALL-HEIGHT #YEAR
+*     SA-DAMS.ALTENATIVE-NAME SA-DAMS.DAM-ID SA-DAMS.DAM-NAME SA-DAMS.IMPOUNDS SA-DAMS.NEAREST-LOCAL
+*     SA-DAMS.PROVINCE SA-DAMS.RESERVOUR-VOLUME SA-DAMS.SURFACE-AREA SA-DAMS.WALL-HEIGHT
+*     SA-DAMS.YEAR
+DEFINE DATA PARAMETER
+1  #ALTENATIVE-NAME (C)
+1  #DAM-ID1 (C)
+1  #DAM-NAME (C)
+1 #G-MASSAGE (A020)
+1  #IMPOUNDS (C)
+1  #NEAREST-LOCAL (C)
+1 #PROGRAM (A008)
+1  #PROVINCE (C)
+1  #RESERVOUR-VOLUME (C)
+1  #SURFACE-AREA (C)
+1  #WALL-HEIGHT (C)
+1  #YEAR (C)
+1 SA-DAMS.ALTENATIVE-NAME (A050)
+1 SA-DAMS.DAM-ID (N03.0)
+1 SA-DAMS.DAM-NAME (A050)
+1 SA-DAMS.IMPOUNDS (A050)
+1 SA-DAMS.NEAREST-LOCAL (A050)
+1 SA-DAMS.PROVINCE (A050)
+1 SA-DAMS.RESERVOUR-VOLUME (N10.4)
+1 SA-DAMS.SURFACE-AREA (N10.4)
+1 SA-DAMS.WALL-HEIGHT (N10.4)
+1 SA-DAMS.YEAR (N04.0)
+END-DEFINE
+FORMAT PS=024 LS=080 ZP=OFF SG=OFF KD=OFF IP=OFF
+* MAP2: MAP PROFILES *****************************        200***********
+* .TTAAAMMOO   D I D I N D I D I        ?_)^&:+(                       *
+* 024079        N0NNUCN             X        01 SYSPROF NR             *
+************************************************************************
+INPUT          (     IP=OFF                                           /*
+                                                                       )
+ 001T 'PROGRAM:'
+ 010T #PROGRAM /*.01U008 A008 .
+      (AD=ODT )
+ 020T 'DAM UPDATE'(U)
+ 031T #G-MASSAGE /*.01D020 A020 .
+      (AD=ODRT CD=GR )
+ 053T *USER /*.02S008 A008 .
+      (AD=ODT )
+ 065T *DATG /*.01S015 A015 .
+      (AD=ODT )
+/
+ 001T 'MAP :'
+ 010T *PROGRAM /*.01S008 A008 .
+      (AD=ODT )
+ 065T *TIME /*.01S008 A010 .
+      (AD=ODT AL=008 )
+/
+ 001T 'ADMIN:'
+ 010T *USER /*.01S008 A008 .
+      (AD=ODT )
+ 023T 'DEPT WATER & SANITATION'(U)
+/
+ 023T 'RSA DAM''s DATABASE'(U)
+/
+/
+ 001T 'Dam ID:'
+ 021T SA-DAMS.DAM-ID /*.01V003 N03.0.
+      (AD=ODLT CV=#DAM-ID1 )
+/
+/
+ 001T 'Dam Name:'
+ 021T SA-DAMS.DAM-NAME /*.99V050 A050 .
+      (AD=MDLT CV=#DAM-NAME )
+/
+ 001T 'Impounds:'
+ 021T SA-DAMS.IMPOUNDS /*.99V050 A050 .
+      (AD=MDLT CV=#IMPOUNDS )
+/
+/
+ 001T 'Province:'
+ 021T SA-DAMS.PROVINCE /*.99V050 A050 .
+      (AD=MDLT CV=#PROVINCE )
+/
+ 001T 'Nearest Local:'
+ 021T SA-DAMS.NEAREST-LOCAL /*.99V050 A050 .
+      (AD=MDLT CV=#NEAREST-LOCAL )
+/
+ 001T 'Year:'
+ 021T SA-DAMS.YEAR /*.99V004 N04.0.
+      (AD=MDLT CV=#YEAR )
+/
+/
+ 001T 'Resevour Volume:'
+ 021T SA-DAMS.RESERVOUR-VOLUME /*.99V015 N10.4.
+      (AD=MDLT CV=#RESERVOUR-VOLUME )
+/
+ 001T 'Surface Area:'
+ 021T SA-DAMS.SURFACE-AREA /*.99V015 N10.4.
+      (AD=MDLT CV=#SURFACE-AREA )
+/
+ 001T 'Wall Height:'
+ 021T SA-DAMS.WALL-HEIGHT /*.99V015 N10.4.
+      (AD=MDLT CV=#WALL-HEIGHT )
+/
+/
+ 001T 'Remaks & Extras:'
+ 021T SA-DAMS.ALTENATIVE-NAME /*.99V050 A050 .
+      (AD=MDLT CV=#ALTENATIVE-NAME )
+/
+/
+/
+/
+/
+* MAP2: VALIDATION *****************************************************
+RULEVAR D01SA-DAMS.DAM-ID                                                   
+* CDIR SA-DAMS                          DAM-ID                          ;
+RULEVAR D01SA-DAMS.DAM-NAME                                                 
+INCDIR SA-DAMS                          DAM-NAME                        ;
+RULEVAR D01SA-DAMS.IMPOUNDS                                                 
+INCDIR SA-DAMS                          IMPOUNDS                        ;
+RULEVAR D01SA-DAMS.PROVINCE                                                 
+INCDIR SA-DAMS                          PROVINCE                        ;
+RULEVAR D01SA-DAMS.NEAREST-LOCAL                                            
+INCDIR SA-DAMS                          NEAREST-LOCAL                   ;
+RULEVAR D01SA-DAMS.YEAR                                                     
+INCDIR SA-DAMS                          YEAR                            ;
+RULEVAR D01SA-DAMS.RESERVOUR-VOLUME                                         
+INCDIR SA-DAMS                          RESERVOUR-VOLUME                ;
+RULEVAR D01SA-DAMS.SURFACE-AREA                                             
+INCDIR SA-DAMS                          SURFACE-AREA                    ;
+RULEVAR D01SA-DAMS.WALL-HEIGHT                                              
+INCDIR SA-DAMS                          WALL-HEIGHT                     ;
+RULEVAR D01SA-DAMS.ALTENATIVE-NAME                                          
+INCDIR SA-DAMS                          ALTENATIVE-NAME                 ;
+* MAP2: END OF MAP *****************************************************
+END

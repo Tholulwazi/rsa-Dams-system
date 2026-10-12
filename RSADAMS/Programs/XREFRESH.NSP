@@ -1,0 +1,29 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP
+* <Natural Source Header
+/** New Program XREFRESH.
+/**
+/** :author tzu
+/* TODO Enter your code here
+DEFINE DATA LOCAL
+
+1 SA-DAMS-DATA VIEW OF SA-DAMS
+  2 DAM-NAME (A50)
+  2 IMPOUNDS (A50)
+  2 NEAREST-LOCAL (A50)
+  2 PROVINCE (A50)
+  2 ALTENATIVE-NAME (A50)
+  2 DAM-ID (N3.0) /* Dam Identity
+  2 YEAR (N4.0)
+  2 RESERVOUR-VOLUME (N10.4)
+  2 SURFACE-AREA (N10.4)
+  2 WALL-HEIGHT (N10.4)
+END-DEFINE
+READ SA-DAMS-DATA 
+
+DELETE
+
+END TRANSACTION
+END-READ
+END

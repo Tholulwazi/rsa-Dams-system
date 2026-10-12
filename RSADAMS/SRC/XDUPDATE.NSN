@@ -1,0 +1,123 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP
+* <Natural Source Header
+/** New Subprogram XDUPDATE.
+
+/** :author tzu
+/* TODO Enter your code here
+
+DEFINE DATA
+PARAMETER
+1 #DAM-ID (N3.0)
+ 1 #DAM-NAME1 (A50)
+ 1 #G-MASSAGE (A020)
+LOCAL
+1 SA-DAMS-DATA VIEW OF SA-DAMS
+  2 DAM-NAME (A50)
+  2 IMPOUNDS (A50)
+  2 NEAREST-LOCAL (A50)
+  2 PROVINCE (A50)
+  2 ALTENATIVE-NAME (A50)
+  2 DAM-ID (N3.0) /* Dam Identity
+  2 YEAR (N4.0)
+  2 RESERVOUR-VOLUME (N10.4)
+  2 SURFACE-AREA (N10.4)
+  2 WALL-HEIGHT (N10.4)
+1 #DAM-NAME (C)
+1 #IMPOUNDS (C)
+1 #NEAREST-LOCAL (C)
+1 #PROVINCE (C)
+1  #ALTENATIVE-NAME (C)
+1 #DAM-ID1 (C) /* Dam Identity
+1 #YEAR (C)
+1 #RESERVOUR-VOLUME (C)
+1 #SURFACE-AREA (C)
+1 #WALL-HEIGHT (C)
+1 #PROGRAM (A8)
+1 #START-YEAR (N4) INIT <1884>
+1 #CURRENT-YEAR (A18) 
+1 REDEFINE #CURRENT-YEAR
+  2 #CURR-YEAR (A4)
+
+END-DEFINE
+SET KEY
+  PF4 NAMED 'UPDATE'
+#PROGRAM := *PROGRAM
+#CURRENT-YEAR := *DATN 
+MOVE (AD=P) TO
+  #DAM-NAME
+  #IMPOUNDS 
+  #NEAREST-LOCAL 
+  #PROVINCE
+  #ALTENATIVE-NAME 
+  #DAM-ID1
+  #YEAR
+  #RESERVOUR-VOLUME
+  #SURFACE-AREA
+  #WALL-HEIGHT
+FIND SA-DAMS-DATA WITH DAM-ID = #DAM-ID
+DAM-ID := #DAM-ID
+
+ INPUT USING MAP "XXXUPD"
+  IF *PF-KEY = 'PF4'
+   
+    MOVE (AD=I) TO  
+      #DAM-NAME
+      #IMPOUNDS
+      #NEAREST-LOCAL
+      #PROVINCE
+      #ALTENATIVE-NAME
+      #YEAR
+      #RESERVOUR-VOLUME
+      #SURFACE-AREA
+      #WALL-HEIGHT
+      
+    INPUT USING MAP "XXXUPD"
+    
+    /***validation
+    IF DAM-NAME = ' '
+      REINPUT ' Dam Name Can not be left blank!!'
+    END-IF
+
+    IF YEAR < #START-YEAR OR YEAR GT VAL(#CURR-YEAR)
+      REINPUT ' YEAR IS INVALID OR YEAR EXCEED CURRENT YEAR !'
+    END-IF
+    IF NEAREST-LOCAL = ' '
+      REINPUT 'Nearest Local Cannot be left blank!!'
+    END-IF
+
+    IF PROVINCE = ' '
+      REINPUT 'Province can not be Left Blank!!'
+    END-IF
+
+    IF RESERVOUR-VOLUME < 0 AND RESERVOUR-VOLUME  = 0
+      REINPUT 'Resevour Volume is < "0" '
+    END-IF
+
+    IF SURFACE-AREA < 0 AND SURFACE-AREA = 0
+      REINPUT 'Surface area is < "0" '
+    END-IF
+
+    IF WALL-HEIGHT < 0 AND WALL-HEIGHT = 0
+      REINPUT 'Wall height is invalid!!'
+    END-IF
+    
+    MOVE (AD=P) TO
+      #DAM-NAME
+      #IMPOUNDS
+      #NEAREST-LOCAL
+      #PROVINCE
+      #ALTENATIVE-NAME
+      #DAM-ID1
+      #YEAR
+      #RESERVOUR-VOLUME
+      #SURFACE-AREA
+      #WALL-HEIGHT
+INPUT WITH TEXT 'RSA DAM RECORD UPDATE WAS SUCCESSFUL' USING MAP "XXXUPD"
+
+    UPDATE
+   END TRANSACTION
+  END-IF
+END-FIND
+END

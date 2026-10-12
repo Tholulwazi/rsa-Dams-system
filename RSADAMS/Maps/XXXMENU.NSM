@@ -1,0 +1,62 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP
+* <Natural Source Header
+* MAP2: PROTOTYPE VERSION 820 --- CREATED BY ONE 9.3.1 ---
+* INPUT USING MAP 'XXXXXXXX'
+*     #G-MASSAGE #SEL(*)
+DEFINE DATA PARAMETER
+1 #G-MASSAGE (A020)
+1 #SEL (A001/00001:00003)
+END-DEFINE
+FORMAT PS=015 LS=067 ZP=OFF SG=OFF KD=OFF IP=OFF
+* MAP2: MAP PROFILES *****************************        200***********
+* .TTAAAMMOO   D I D I N D I D I        ?_)^&:+(                       *
+* 015066        N0NYUCN             X ^      01 SYSPROF NR             *
+************************************************************************
+INPUT          (     IP=OFF                                           /*
+                                                                       )
+ 005T 'USER:   '
+ 014T *USER /*.02S008 A008 .
+      (AD=ODT )
+ 051T *DATG /*.01S014 A015 .
+      (AD=ODT AL=014 )
+/
+ 005T 'MAP:'
+ 014T *PROGRAM /*.01S008 A008 .
+      (AD=ODT )
+ 051T *TIME /*.01S009 A010 .
+      (AD=ODT AL=009 )
+/
+/
+ 020T 'Welcome to DEPT Water & Sanitation !'(U)
+/
+/
+ 024T #G-MASSAGE /*.01U020 A020 .
+      (AD=ODT CD=GR )
+/
+ 034T 'MENU'(BLI)
+/
+/
+ 021T '1.'
+ 027T #SEL (1) /*.99U001 A001 .
+      (AD=MDT )
+   /**A1000030000100001000010000100001100003001001001001000HV
+ 032T 'View existing Dams'
+/
+/
+ 021T '2.'
+ 027T #SEL (2) /*.99U001 A001 .
+      (AD=MDT )
+ 032T 'Dam Statistics'
+/
+/
+ 021T '3.'
+ 027T #SEL (3) /*.99U001 A001 .
+      (AD=MDT )
+ 032T 'Add New Dam'
+/
+/
+* MAP2: VALIDATION *****************************************************
+* MAP2: END OF MAP *****************************************************
+END

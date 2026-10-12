@@ -1,0 +1,109 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP
+* <Natural Source Header
+* MAP2: PROTOTYPE VERSION 820 --- CREATED BY ONE 9.3.1 ---
+* INPUT USING MAP 'XXXXXXXX'
+*     ##ALTENATIVE-NAME ##DAM-NAME ##IMPOUNDS ##NEAREST-LOCAL ##PROVINCE
+*     ##RESERVOUR-VOLUME ##SURFACE-AREA ##WALL-HEIGHT ##YEAR #DAM-ID #DAM-NAME #G-MASSAGE #NEW-ID
+*     #PROGRAM
+DEFINE DATA PARAMETER
+1 ##ALTENATIVE-NAME (A050)
+1 ##DAM-NAME (A050)
+1 ##IMPOUNDS (A050)
+1 ##NEAREST-LOCAL (A050)
+1 ##PROVINCE (A050)
+1 ##RESERVOUR-VOLUME (N10.4)
+1 ##SURFACE-AREA (N10.4)
+1 ##WALL-HEIGHT (N10.4)
+1 ##YEAR (N04.0)
+1 #DAM-ID (N03.0)
+1  #DAM-NAME (C)
+1 #G-MASSAGE (A020)
+1 #NEW-ID (N03.0)
+1 #PROGRAM (A008)
+END-DEFINE
+FORMAT PS=024 LS=080 ZP=OFF SG=OFF KD=OFF IP=OFF
+* MAP2: MAP PROFILES *****************************        200***********
+* .TTAAAMMOO   D I D I N D I D I        ?_)^&:+(                       *
+* 024079        N0NNUCN             X        01 SYSPROF NR             *
+************************************************************************
+INPUT          (     IP=OFF                                           /*
+                                                                       )
+ 001T 'PROGRAM:'
+ 010T #PROGRAM /*.01U008 A008 .
+      (AD=ODT )
+ 022T 'DAM UPDATE'(U)
+ 062T *DATG /*.01S015 A015 .
+      (AD=ODT )
+/
+ 001T 'MAP :'
+ 010T *PROGRAM /*.01S008 A008 .
+      (AD=ODT )
+ 023T 'DEPT WATER & SANITATION'(U)
+ 062T *TIME /*.01S008 A010 .
+      (AD=ODT AL=008 )
+/
+ 001T 'ADMIN:'
+ 010T *USER /*.01S008 A008 .
+      (AD=ODT )
+ 025T 'RSA DAM''s DATABASE'(U)
+/
+ 021T #G-MASSAGE /*.01D020 A020 .
+      (AD=ODRT CD=GR )
+/
+/
+ 001T 'NEW Genrated Dam ID:'
+ 023T #NEW-ID /*.01D003 N03.0.
+      (AD=OILT CD=GR )
+/
+/
+ 001T 'Dam Name:'
+ 021T ##DAM-NAME /*.99D050 A050 .
+      (AD=MDLT CV=#DAM-NAME )
+/
+ 001T 'Impounds:'
+ 021T ##IMPOUNDS /*.99D050 A050 .
+      (AD=MDLT CV=#DAM-NAME )
+/
+/
+ 001T 'Province:'
+ 021T ##PROVINCE /*.99D050 A050 .
+      (AD=MDLT CV=#DAM-NAME )
+/
+ 001T 'Nearest Local:'
+ 021T ##NEAREST-LOCAL /*.99D050 A050 .
+      (AD=MDLT CV=#DAM-NAME )
+/
+ 001T 'Year:'
+ 021T ##YEAR /*.99D004 N04.0.
+      (AD=MDLT CV=#DAM-NAME )
+/
+/
+ 001T 'Resevour Volume:'
+ 021T ##RESERVOUR-VOLUME /*.99D015 N10.4.
+      (AD=MDLT CV=#DAM-NAME )
+/
+ 001T 'Surface Area:'
+ 021T ##SURFACE-AREA /*.99D015 N10.4.
+      (AD=MDLT CV=#DAM-NAME )
+/
+ 001T 'Wall Height:'
+ 021T ##WALL-HEIGHT /*.99D015 N10.4.
+      (AD=MDLT CV=#DAM-NAME )
+/
+/
+ 001T 'Remaks & Extras:'
+ 021T ##ALTENATIVE-NAME /*.99D050 A050 .
+      (AD=MDLT CV=#DAM-NAME )
+/
+/
+ 001T 'Last Dam ID:'
+ 021T #DAM-ID /*.01D003 N03.0.
+      (AD=OILT CD=RE )
+/
+/
+/
+* MAP2: VALIDATION *****************************************************
+* MAP2: END OF MAP *****************************************************
+END

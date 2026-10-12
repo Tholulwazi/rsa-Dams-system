@@ -1,0 +1,235 @@
+* >Natural Source Header 000000
+* :Mode R
+* :CP
+* <Natural Source Header
+* MAP2: PROTOTYPE VERSION 820 --- CREATED BY ONE 9.3.1 ---
+* INPUT USING MAP 'XXXXXXXX'
+*     #DAM-ID(*) #DAM-NAME(*) #IMPOUNDS(*) #LATE-RESTART-NAME #PROGRAM
+*     #PROVINCE(*) #RESTART-NAME #SELECT(*)
+DEFINE DATA PARAMETER
+1 #DAM-ID (N03.0/00001:00016)
+1 #DAM-NAME (A020/00001:00016)
+1 #IMPOUNDS (A020/00001:00016)
+1 #LATE-RESTART-NAME (A020)
+1 #PROGRAM (A008)
+1 #PROVINCE (A020/00001:00016)
+1 #RESTART-NAME (A020)
+1 #SELECT (A001/00001:00016)
+END-DEFINE
+FORMAT PS=024 LS=080 ZP=OFF SG=OFF KD=OFF IP=OFF
+* MAP2: MAP PROFILES *****************************        200***********
+* .TTAAAMMOO   D I D I N D I D I        ?_)^&:+(                       *
+* 024079        N0NNUCN             X ^      01 SYSPROF NR             *
+************************************************************************
+INPUT          (     IP=OFF                                           /*
+                                                                       )
+ 002T 'PROGRAM :'
+ 013T #PROGRAM /*.01D008 A008 .
+      (AD=ODRT )
+ 062T *DATG /*.01S018 A015 .
+      (AD=ODT CD=TU AL=018 )
+/
+ 002T 'DAM REGISTER'(BLU)
+ 064T *TIME /*.01S015 A010 .
+      (AD=OCT CD=TU AL=015 )
+/
+ 011T 'DEPT WATER & SANITATION REPUBLIC OF SOUTH AFRICA  '(U)
+/
+/
+/
+ 001T 'RESTART NAME:'
+ 015T #RESTART-NAME /*.99U020 A020 .
+      (AD=MCT )
+ 038T #LATE-RESTART-NAME /*.01D020 A020 .
+      (AD=ODRT CD=GR )
+/
+/
+ 001T 'sel '(I)
+ 006T 'Dam ID '(I)
+ 016T 'Dame Name  '(I)
+ 037T 'Impounds   '(I)
+ 058T 'Province   '(I)
+/
+ 002T #SELECT (1) /*.99U001 A001 .
+      (AD=MDT )
+   /**A1000160000100001000010000100001100016001001000001000HV
+ 007T #DAM-ID (1) /*.01U003 N03.0.
+      (AD=ODT )
+   /**A1000160000100001000010000100001100016001001000001000HV
+ 016T #DAM-NAME (1) /*.01U020 A020 .
+      (AD=ODT )
+   /**A1000160000100001000010000100001100016001001000001000HV
+ 037T #IMPOUNDS (1) /*.01U020 A020 .
+      (AD=ODT )
+   /**A1000160000100001000010000100001100016001001000001000HV
+ 058T #PROVINCE (1) /*.01U020 A020 .
+      (AD=ODT )
+   /**A1000160000100001000010000100001100016001001000001000HV
+/
+ 002T #SELECT (2) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (2) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (2) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (2) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (2) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (3) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (3) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (3) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (3) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (3) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (4) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (4) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (4) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (4) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (4) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (5) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (5) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (5) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (5) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (5) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (6) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (6) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (6) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (6) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (6) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (7) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (7) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (7) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (7) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (7) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (8) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (8) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (8) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (8) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (8) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (9) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (9) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (9) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (9) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (9) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (10) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (10) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (10) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (10) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (10) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (11) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (11) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (11) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (11) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (11) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (12) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (12) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (12) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (12) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (12) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (13) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (13) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (13) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (13) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (13) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (14) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (14) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (14) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (14) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (14) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (15) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (15) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (15) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (15) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (15) /*.01U020 A020 .
+      (AD=ODT )
+/
+ 002T #SELECT (16) /*.99U001 A001 .
+      (AD=MDT )
+ 007T #DAM-ID (16) /*.01U003 N03.0.
+      (AD=ODT )
+ 016T #DAM-NAME (16) /*.01U020 A020 .
+      (AD=ODT )
+ 037T #IMPOUNDS (16) /*.01U020 A020 .
+      (AD=ODT )
+ 058T #PROVINCE (16) /*.01U020 A020 .
+      (AD=ODT )
+* MAP2: VALIDATION *****************************************************
+* MAP2: END OF MAP *****************************************************
+END

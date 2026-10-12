@@ -1,0 +1,30 @@
+* >Natural Source Header 000000
+* :Mode S
+* :CP
+* <Natural Source Header
+/** New Program XXSTART.
+/**
+/** :author tzu
+/* TODO Enter your code here
+DEFINE DATA LOCAL
+1 #DATE (A18)
+1 REDEFINE #DATE
+2 #TIME (A5)
+1 #G-MASSAGE (A20)
+END-DEFINE
+#DATE := *TIME 
+/*WRITE 'CURRENT TIME : '#TIME
+
+DECIDE ON EVERY VALUE OF #TIME
+    VALUE  '00:00' : '11:59'
+    MOVE 'Good Morning ' TO #G-MASSAGE 
+    VALUE  '12:00' : '16:59'
+    MOVE 'Good Morning ' TO #G-MASSAGE 
+    VALUE  '17:00' : '23:59'
+    MOVE 'Good Evening' TO #G-MASSAGE
+    NONE IGNORE
+END-DECIDE
+
+WRITE 'CURRENT TIME : '#TIME // #G-MASSAGE
+
+END

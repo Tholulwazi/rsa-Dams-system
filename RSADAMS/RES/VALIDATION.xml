@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEMPLATE date="2026-03-31" environment="" name="VALIDATION"
+    time="11:22:28" type="DataBrowser" user="" version="1.0">
+    <DEFINITIONS>
+        <DESCRIPTION>Report for DDM SA-DAMS</DESCRIPTION>
+        <RECORDLIMIT>300</RECORDLIMIT>
+        <FILTEREDBY>&gt;&gt; Physical Read &lt;&lt;</FILTEREDBY>
+        <OPTIONS>
+            <USEEDITMASK>None</USEEDITMASK>
+            <USEFIELDHEADER>None</USEFIELDHEADER>
+        </OPTIONS>
+    </DEFINITIONS>
+    <DDM dbid="010" fnr="013" name="SA-DAMS" type="ada">
+        <FIELD Checked="X" Descriptor="D" Editmask="" Format="A"
+            Header="" Length="50" Level="1" Name="DAM-NAME" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="A"
+            Header="" Length="50" Level="1" Name="IMPOUNDS" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="A"
+            Header="" Length="50" Level="1" Name="NEAREST-LOCAL" Type=""/>
+        <FIELD Checked="X" Descriptor="D" Editmask="" Format="A"
+            Header="" Length="50" Level="1" Name="PROVINCE" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="A"
+            Header="" Length="50" Level="1" Name="ALTENATIVE-NAME" Type=""/>
+        <FIELD Checked="X" Descriptor="D" Editmask="" Format="N"
+            Header="" Length="3.0" Level="1" Name="DAM-ID" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="N"
+            Header="" Length="4.0" Level="1" Name="YEAR" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="N"
+            Header="" Length="10.4" Level="1" Name="RESERVOUR-VOLUME" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="N"
+            Header="" Length="10.4" Level="1" Name="SURFACE-AREA" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="N"
+            Header="" Length="10.4" Level="1" Name="WALL-HEIGHT" Type=""/>
+        <FIELD Checked="X" Descriptor="" Editmask="" Format="A"
+            Header="" Length="200" Level="1" Name="DAM-RECORD" Type=""/>
+        <FIELD Descriptor="P" Editmask="" Format="A" Header=""
+            Length="50" Level="1" Name="PHONATIC-NAME" Type=""/>
+    </DDM>
+    <GENERALFIELDS>
+        <FIELD Editmask="" Format="I" Header="" Length="4" Level="1"
+            Name=".COUNTER" Type="#"/>
+        <FIELD Editmask="" Format="P" Header="" Length="10" Level="1"
+            Name="*ISN" Type="#"/>
+    </GENERALFIELDS>
+</TEMPLATE>
