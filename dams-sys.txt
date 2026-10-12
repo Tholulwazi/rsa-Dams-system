@@ -1,0 +1,18 @@
+*H**ANAT9303202610121021084WNT-X86                          4CANGX    08.2          
+*C**                                DAMS    XXSTART                         F S   NN0000        
+*D01NAT9303F DAMS    XXSTART                         TZU     TZU             S      
+*D02            2026032711505602026032711505600000000160    
+*D03WNT-X86 
+*D04                 windows-1252   
+*S**/** New Program XXSTART.        
+*S**/**     
+*S**/** :author tzu     
+*S**/* TODO Enter your code here    
+*S**DEFINE DATA LOCAL   
+*S**1 #DATE (A18)       
+*S**END-DEFINE          
+*S**        
+*S**#DATE := *DATD      
+*S**WRITE #DATE         
+*S**END     
+*E          
